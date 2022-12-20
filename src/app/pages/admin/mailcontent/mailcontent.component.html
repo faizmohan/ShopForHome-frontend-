@@ -1,0 +1,31 @@
+<mat-card>
+  <h1>Send an Email</h1>
+  <!-- {{category | json}} -->
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="row">
+        <div class="col md-8 offset-md-2">
+          <form (ngSubmit)="formSubmit()">
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Subject</mat-label>
+              <input required type="text" name="subject" matInput placeholder="Enter here"
+              [(ngModel)]="request.subject"/>
+            </mat-form-field>
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>To</mat-label>
+              <input required type="email" name="mail" matInput placeholder="Enter here"
+              [(ngModel)]="request.to"/>
+            </mat-form-field>
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Message</mat-label>
+              <textarea name="message" matInput placeholder="Enter category description" rows="15" [(ngModel)]="request.message"></textarea>
+            </mat-form-field>
+            <div class="container text-center style=margin-top='20px'">
+              <button mat-raised-button color="primary">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

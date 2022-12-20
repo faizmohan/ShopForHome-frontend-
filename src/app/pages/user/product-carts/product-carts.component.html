@@ -1,0 +1,38 @@
+<h1 style="margin-top:20px">Cart</h1>
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="col-md-12" class="arrange">
+      <mat-card class="example-card" *ngFor="let p of products; let i= index " style="margin-top:20px;">
+        <mat-card-header class="card-header">
+          <mat-card-title>{{ p.productName }}</mat-card-title>
+        </mat-card-header>
+        <div class="img-wrapper">
+
+          <img mat-card-image src="{{p.image}}">
+        </div>
+        <mat-card-content>
+          <p>
+            {{p.productDesc}}
+          </p>
+          <p>
+            <strong>Price: </strong>{{p.productPrice}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="counter-wrapper">
+            <div class="counter-sign" (click)="increaseCount(p)">+</div>
+            <div>{{p.count}}</div>
+            <div class="counter-sign" (click)="decreaseCount(p)">-</div>
+          </div>
+          <!-- <button mat-stroked-button color="warn" (click)="addToWishlist(p.pid)">Add to Wishlist</button> -->
+          <!-- <button mat-stroked-button color="primary">Add to Cart</button> -->
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+  </div>
+  <div>
+    <div style="margin: 40px auto; text-align: center;">Total price : {{total}}</div>
+    <button style="margin: 40px auto; display:inherit;" (click)="buy()" mat-raised-button color="primary">Buy Now</button>
+  </div>
+</div>

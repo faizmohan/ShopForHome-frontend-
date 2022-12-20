@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>store</mat-icon>
+  </a>
+  <span>Shop For Home</span>
+  <span class="example-spacer"></span>
+  <a 
+  *ngIf="!isActive" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon">
+    Login
+  </a>
+  <a 
+  *ngIf="!isActive" [routerLink]="'/signup'" style="margin-left: 20px; margin-right: 20px" mat-icon-button
+    class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    Register
+  </a>
+  <a (click)="logout()" 
+  *ngIf="isActive" style="margin-left: 20px; margin-right: 20px" mat-icon-button
+    class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    Logout
+  </a>
+  <button 
+  *ngIf="isActive" style="margin-left: 20px" mat-button
+    class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    {{user.username}}
+</button>
+</mat-toolbar>

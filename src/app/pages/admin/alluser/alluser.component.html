@@ -1,0 +1,31 @@
+<div class="demo-button-container">
+  <button routerLink="/admin/adduser" mat-raised-button class="demo-button">
+    Add data
+  </button>
+</div>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">User ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let u of users">
+    <tr>
+      <th scope="row">{{u.id}}</th>
+      <td>{{u.username}}</td>
+      <td>{{u.email}}</td>
+      <td><button [routerLink]="'/admin/update/'+u.id"
+        mat-raised-button
+        class="demo-button">
+      Update data
+    </button></td>
+    <td><button
+      mat-raised-button
+      class="demo-button" (click)="deleteData(u.id)">
+    Remove data
+  </button></td>
+    </tr>
+  </tbody>
+</table>

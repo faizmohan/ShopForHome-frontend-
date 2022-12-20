@@ -1,0 +1,35 @@
+<h1 style="margin-top:20px">All products</h1>
+<div style="margin-left: 1050px;">
+  <button mat-flat-button color="primary" (click)="sort('productCount')">Sort based on stock</button>
+</div>
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="arrange">
+      <mat-card class="example-card" *ngFor="let p of products | orderBy: key: reverse; let i= index "
+        style="margin-top:20px;">
+        <mat-card-header class="card-header">
+          <mat-card-title>{{ p.productName }}</mat-card-title>
+        </mat-card-header>
+        <div class="img-wrapper">
+          <img mat-card-image src="{{p.image}}">
+        </div>
+        <mat-card-content>
+          <p>
+            {{p.productDesc}}
+          </p>
+          <p style="display: inline; ">
+            <strong>Price: </strong>{{p.productPrice}}
+          </p>
+          <p style="display: inline;margin-left: 200px;">
+            <strong>Stock: </strong>{{p.productCount}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button color="primary" [routerLink]="'/admin/updateproduct/'+p.pid">Update</button>
+          <button mat-stroked-button color="warn" (click)="deleteData(p.pid)">Delete</button>
+          <button class="button1" routerLink="/admin/sendmail">Mail</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

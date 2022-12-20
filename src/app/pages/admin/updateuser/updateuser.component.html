@@ -1,0 +1,31 @@
+<mat-card>
+  <h1>Add New User</h1>
+  <!-- {{category | json}} -->
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="row">
+        <div class="col md-8 offset-md-2">
+          <form (ngSubmit)="formSubmit()">
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input required type="text" name="username" matInput placeholder="Enter here"
+              [(ngModel)]="User.username"/>
+            </mat-form-field>
+
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input type="email" name="email" matInput placeholder="Enter here"[(ngModel)]="User.email"/>
+            </mat-form-field>
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input required type="password" name="password" matInput placeholder="Enter here"[(ngModel)]="User.password"/>
+            </mat-form-field>
+            <div class="container text-center style=margin-top='20px'">
+              <button mat-raised-button color="primary">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

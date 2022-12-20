@@ -1,0 +1,15 @@
+<div class="bootstrap-wrapper">
+  <div class="container" *ngIf="flag">
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-md-6 offset-md-3 text-center">
+        <h1>Upload Excel file</h1>
+        <input (change)="selectFile($event)" type="file"/>
+        <button (click)="uploadFile()" class="btn" mat-raised-button color="primary">Upload</button>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center" *ngIf="!flag">
+    <h1>Please wait ...</h1>
+    <h2>uploading ...</h2>
+  </div>
+</div>

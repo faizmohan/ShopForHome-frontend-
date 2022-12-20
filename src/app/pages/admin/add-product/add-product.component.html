@@ -1,0 +1,46 @@
+<mat-card>
+  <h1>Add new Product</h1>
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="row">
+        <div class="col md-2 offset-md-2">
+          <form (ngSubmit)="formSubmit()">
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Product Name</mat-label>
+              <input required type="text" name="productName" matInput placeholder="Enter here"
+                [(ngModel)]="product.productName" />
+            </mat-form-field>
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Description</mat-label>
+              <input required type="text" name="productDesc" matInput placeholder="Enter here"
+                [(ngModel)]="product.productDesc">
+            </mat-form-field>
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Product image</mat-label>
+              <input required type="text" name="image" matInput placeholder="Paste url" [(ngModel)]="product.image"/>
+            </mat-form-field>
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Product price</mat-label>
+              <input required type="number" name="productPrice" matInput placeholder="Enter here" [(ngModel)]="product.productPrice"/>
+            </mat-form-field>
+            <mat-form-field class="w60" appearance="outline">
+              <mat-label>Quantity</mat-label>
+              <input required type="number" name="productCount" matInput placeholder="Enter here" [(ngModel)]="product.productCount"/>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose category</mat-label>
+              <mat-select name="category" [(ngModel)]="product.category.cid">
+                <mat-option *ngFor="let c of category" [value]="c.id">
+                  {{c.categoryName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="container text-center style=margin-top='20px'">
+              <button mat-raised-button color="primary">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
